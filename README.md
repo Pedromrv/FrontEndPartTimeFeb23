@@ -1,4 +1,4 @@
-# Enero23-M25
+# Febrero23-M25
 
 > 📦 Repositorio principal de la startup M25 (Madrid - 3ª promoción)
 * * *
