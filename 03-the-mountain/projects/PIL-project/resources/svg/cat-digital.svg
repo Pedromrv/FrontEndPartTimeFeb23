@@ -1,0 +1,15 @@
+<svg id="SECTOR-PICTO" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.828" height="36.355" viewBox="0 0 35.828 36.355">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2432" data-name="Rectangle 2432" width="35.828" height="36.355" fill="#fff" stroke="#ffc33b" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_17574" data-name="Group 17574">
+    <g id="Mask_Group_101" data-name="Mask Group 101" clip-path="url(#clip-path)">
+      <g id="arrow-right" transform="translate(52.574 18.583) rotate(135)">
+        <line id="Line_592" data-name="Line 592" x1="48.473" transform="translate(0 24.849)" fill="none" stroke="#ffc33b" stroke-width="1"/>
+        <path id="Path_13934" data-name="Path 13934" d="M24.861,0,0,24.861,24.861,49.722" transform="translate(0.091)" fill="none" stroke="#ffc33b" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

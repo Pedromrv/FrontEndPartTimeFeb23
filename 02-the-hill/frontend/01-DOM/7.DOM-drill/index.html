@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Great DOM Drill</title>
+</head>
+
+<body>
+  <h1>My favorite franchises</h1>
+
+  <ul>
+    <li>The Lord of the Rings</li>
+    <li>Harry Potter</li>
+    <li>Final Destination</li>
+    <li>Harry Potter</li>
+    <li>Saw</li>
+    <li>Fast and Furious</li>
+    <li>Hellraiser</li>
+    <li>Nightmare on Elm Street</li>
+    <li>Friday the 13th</li>
+    <li>Twilight</li>
+    <li>Final Destination</li>
+  </ul>
+
+  <script>
+    const movies = document.querySelector("ul");
+    const moviesList = [...movies.children].filter(childNode => childNode.nodeType === 1)
+    
+    // Remove duplicates
+    const moviesNotDuplicate = new Array();    
+    for (const li of moviesList) {
+      if(!moviesNotDuplicate.find( x => x.isEqualNode(li))){
+        moviesNotDuplicate.push(li)
+      } else {
+        li.remove()
+      }
+    }
+    
+    movies.childNodes.forEach( (child, i) => {
+      if(child.nodeType === 1 && movies.childNodes[i].nodeType === 1) {
+        //Fast & Furious first
+        if(child.innerText == "Fast and Furious") {
+          const fastFurious = child
+          movies.replaceChild(
+            fastFurious,
+            movies.childNodes[0]
+            )
+            fastFurious.classList.add("important")
+          }
+          // click alert()
+          child.addEventListener("click", e => {
+            if(e.target.innerText == "Fast and Furious") {
+            alert(`The most important franchise ever, the story of DOM(inic) Toretto's family. It's not about car, it's about family.`)
+          } else {
+            alert(e.target.innerText)
+          } 
+        })
+
+      }  
+    });
+    
+    
+    
+    // Select
+    const div = document.createElement("div")
+    document.body.insertBefore(div, movies)
+    const select = document.createElement("select")
+    div.appendChild(select)
+    const optionImportant = document.createElement("option")
+    const optionNormal = document.createElement("option")
+    optionImportant.innerText = "Important franchises"
+    optionNormal.innerText = "Normal franchises"
+    select.appendChild(optionNormal)
+    select.appendChild(optionImportant)
+
+    select.addEventListener("change", (e) => {
+      for(let child of movies.children) {
+        child.style.visibility = "visible"
+        if(e.target.value == "Important franchises" && !child.matches(".important")) {
+          child.style.visibility = "hidden"
+        } else if(e.target.value == "Normal franchises" && child.matches(".important")) {
+          child.style.visibility = "hidden"
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
