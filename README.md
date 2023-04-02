@@ -21,7 +21,7 @@ Es molesto, pero, hey, que no cunda el pánico, ¡Git tiene una solución para t
 
 En tu terminal, navega hasta el clon de tu fork, e introduce el siguiente comando :
 
-    git remote add upstream git@github.com:gammatech/LIE-Jepsen-6.git
+    git remote add upstream git@github.com:gammatech.git
 
 Si todo ha ido bien, el comando `git remote -v` debería devolver cuatro líneas: dos para `origin` (tu fork), dos para `upstream` (el repositorio de referencia).
 
